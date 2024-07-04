@@ -270,6 +270,17 @@ def count_searched_phrase(phrase, str):
 
 
 def advisor(message, articles):
+    """
+        Use the OpenAI API to consult the results with the question of the user.
+
+        Parameters:
+        message(string): User's question.
+        articles(dict): The found news articles.
+
+        Returns:
+        string: The IA's answer.
+
+    """
     global client, model, prompt
     links = ""    
 
@@ -286,6 +297,15 @@ def advisor(message, articles):
 
 
 def advisor_window(articles):
+    """
+        Open a window to user ask something to IA, based on the found news.
+
+        Parameters:
+        articles(dict): The news articles found.
+
+        Returns:
+        Boolen: True when user select "Exit".
+    """
     LOGGER.info("Starting the A.I. Bot...")
     # assistant.add_image("bot-face.jpeg")
     message = None
